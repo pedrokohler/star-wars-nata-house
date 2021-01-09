@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import Input from './input';
+import React from "react";
+import styled from "styled-components";
+import Input from "./input";
 
 const Container = styled.div`
   position: relative;
@@ -41,8 +42,6 @@ const Separator = styled.hr`
   margin: 2em 0;
 `;
 
-
-
 function InputCard() {
   return (
     <Container>
@@ -51,7 +50,7 @@ function InputCard() {
         <Separator />
         <p>
           Do you have a business meeting in Tatooine and have no
-          ideia how many stops you're gonna have to make until you get there?
+          ideia how many stops you&apos;re gonna have to make until you get there?
           Perhaps a small vacation in Naboo? No problem,
           just type in the number of Megalights of your trip
           and search for you ship model below to find out!

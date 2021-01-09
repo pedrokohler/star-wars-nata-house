@@ -1,11 +1,14 @@
-import React, { createContext, useState, useCallback, useRef } from 'react';
-import { fetchShips } from '../services/ships';
+import React, {
+  createContext, useState, useCallback, useRef,
+} from "react";
+import PropTypes from "prop-types";
+import fetchShips from "../services/ships";
 
 export const ShipsContext = createContext();
 
 const PAGE_SIZE = 10;
 
-function Ships ({ children }) {
+function Ships({ children }) {
   const isFetching = useRef(false);
   const [loadedPages, setLoadedPages] = useState([]);
   const [pageCount, setPageCount] = useState(1);
@@ -13,12 +16,12 @@ function Ships ({ children }) {
 
   const fetchNewShipBatch = useCallback(async (page) => {
     isFetching.current = true;
-    const { results, count} = await fetchShips(page);
+    const { results, count } = await fetchShips(page);
 
     const newShipsArray = ships.slice();
     newShipsArray[page - 1] = results;
     setShips(newShipsArray);
-    setPageCount(Math.ceil(count/PAGE_SIZE));
+    setPageCount(Math.ceil(count / PAGE_SIZE));
     setLoadedPages([...loadedPages, page]);
 
     isFetching.current = false;
@@ -26,24 +29,29 @@ function Ships ({ children }) {
   }, [loadedPages, ships]);
 
   const getShipsPage = useCallback(async (page) => {
-    if(isFetching.current){
+    if (isFetching.current) {
       return [];
     }
-    if(loadedPages.includes(page)){
+    if (loadedPages.includes(page)) {
       return ships[page - 1];
     }
-    return await fetchNewShipBatch(page);
+    const newShips = await fetchNewShipBatch(page);
+    return newShips;
   }, [fetchNewShipBatch, loadedPages, ships]);
 
   return (
     <ShipsContext.Provider value={{
       getShipsPage,
-      pageCount
+      pageCount,
     }}
     >
       {children}
     </ShipsContext.Provider>
   );
+}
+
+Ships.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Ships;

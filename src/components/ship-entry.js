@@ -1,8 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 
-import ListEntry from './list-entry';
-import { computeMinimumStops } from '../domain/ships';
-
+import ListEntry from "./list-entry";
+import { computeMinimumStops } from "../domain/ships";
 
 const Separator = styled.hr`
   border-top: 1px solid rgba(51, 101, 160, 0.3);
@@ -11,14 +11,14 @@ const Separator = styled.hr`
   margin-right: 0;
 `;
 
-const ShipEntry = (distance) => (ship) =>(
+const ShipEntry = (distance) => (ship) => (
   <div key={ship.model}>
     <Separator />
     <ListEntry
       firstColumn={ship.name}
-      secondColumn={computeMinimumStops(distance, ship)}
+      secondColumn={computeMinimumStops(distance, ship) || "Unknown"}
     />
   </div>
-)
+);
 
 export default ShipEntry;

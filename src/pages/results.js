@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
-import Pagination from '@material-ui/lab/Pagination';
+import Pagination from "@material-ui/lab/Pagination";
 
-import ShipEntry from '../components/ship-entry';
-import ListEntry from '../components/list-entry';
-import useShips from '../hooks/ships';
+import ShipEntry from "../components/ship-entry";
+import ListEntry from "../components/list-entry";
+import useShips from "../hooks/ships";
 
 const Container = styled.div`
   text-align: center;
@@ -58,9 +58,9 @@ function Results() {
   const [ships, setShips] = useState([]);
   const [page, setPage] = useState(1);
 
-  useEffect(()=>{
+  useEffect(() => {
     const query = new URLSearchParams(location.search);
-    setDistance(query.get('distance'));
+    setDistance(query.get("distance"));
     getShipsPage(page).then(setShips);
   }, [location, page, getShipsPage]);
 
@@ -76,7 +76,11 @@ function Results() {
         </Link>
       </Header>
       <Section>
-        <DistanceDisplay>{distance} Megalights</DistanceDisplay>
+        <DistanceDisplay>
+          {distance}
+          {" "}
+          Megalights
+        </DistanceDisplay>
         <p>Find out the number of stops for your ship</p>
         <ListEntry
           firstColumn="Spaceship"

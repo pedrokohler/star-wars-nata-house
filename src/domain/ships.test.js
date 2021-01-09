@@ -2,10 +2,10 @@ import {
   convertConsumablesLimitToHours,
   shipHasValidMegalights,
   shipHasValidConsumables,
-  computeMinimumStops
-} from './ships';
+  computeMinimumStops,
+} from "./ships";
 
-describe("Ships Domain", ()=> {
+describe("Ships Domain", () => {
   describe("convertConsumablesLimitToHours", () => {
     it("Should convert '1 year' to 8760", () => {
       const result = convertConsumablesLimitToHours("1 year");
@@ -51,44 +51,44 @@ describe("Ships Domain", ()=> {
 
   describe("shipHasValidMegalights", () => {
     it("Should return false to text value", () => {
-      const ship = { MGLT: "text" }
+      const ship = { MGLT: "text" };
       expect(shipHasValidMegalights(ship)).toBe(false);
     });
 
     it("Should return true to numeric value", () => {
-      const ship = { MGLT: 10 }
+      const ship = { MGLT: 10 };
       expect(shipHasValidMegalights(ship)).toBe(true);
     });
   });
 
   describe("shipHasValidConsumables", () => {
     it("Should return true to '1 year'", () => {
-      const ship = { consumables: "1 year" }
+      const ship = { consumables: "1 year" };
       expect(shipHasValidConsumables(ship)).toBe(true);
     });
 
     it("Should return true to '1 month'", () => {
-      const ship = { consumables: "1 month" }
+      const ship = { consumables: "1 month" };
       expect(shipHasValidConsumables(ship)).toBe(true);
     });
 
     it("Should return true to '1 day'", () => {
-      const ship = { consumables: "1 day" }
+      const ship = { consumables: "1 day" };
       expect(shipHasValidConsumables(ship)).toBe(true);
     });
 
     it("Should return true to '1 week'", () => {
-      const ship = { consumables: "1 week" }
+      const ship = { consumables: "1 week" };
       expect(shipHasValidConsumables(ship)).toBe(true);
     });
 
     it("Should return false to other qualifiers", () => {
-      const ship = { consumables: "1 eon" }
+      const ship = { consumables: "1 eon" };
       expect(shipHasValidConsumables(ship)).toBe(false);
     });
 
     it("Should return false if it doesn't have a numeric value in the begining", () => {
-      const ship = { consumables: "Ten years" }
+      const ship = { consumables: "Ten years" };
       expect(shipHasValidConsumables(ship)).toBe(false);
     });
   });
@@ -107,7 +107,6 @@ describe("Ships Domain", ()=> {
       () => {
         const ship = { consumables: "2 months", MGLT: 75 };
         expect(computeMinimumStops(1_000_000, ship)).toBe(9);
-      }
-    );
-  })
+      });
+  });
 });

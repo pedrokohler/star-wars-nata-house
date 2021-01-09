@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import InputCard from '../components/input-card';
-import background from '../images/ship.jpg';
+import InputCard from "../components/input-card";
+import background from "../images/ship.jpg";
 
 const BackgroundImage = styled.div`
   background: url(${background}) no-repeat fixed;
