@@ -5,7 +5,8 @@ import background from '../images/ship.jpg';
 
 const BackgroundImage = styled.div`
   background: url(${background}) no-repeat fixed;
-  background-position: 50% -150px;
+  background-position: 50% -250px;
+  background-size: cover;
   width: 100vw;
   height: 300px;
 `;

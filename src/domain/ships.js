@@ -8,6 +8,7 @@ const timeConversionMultiplierMap = new Map([
 
 const consumablesRegex = /(\d{1,})\s(\w*[^s])s?$/; // separates consumables digits and qualifier in singular
 
+
 export const convertConsumablesLimitToHours = (consumables) => {
   const [, quantity, qualifier] = consumables.match(consumablesRegex);
   const multiplier = timeConversionMultiplierMap.get(qualifier);
@@ -18,6 +19,8 @@ export const shipHasValidMegalights = (ship) => !isNaN(ship.MGLT);
 
 export const shipHasValidConsumables = (ship) => consumablesRegex.test(ship.consumables)
 && timeConversionMultiplierMap.has(ship.consumables.match(consumablesRegex)[2]);
+
+export const isValidDistance = (value) => value !== "" && Number.isInteger(Number(value));
 
 export const computeMinimumStops = (distanceInMegalights, ship) => {
   if(shipHasValidMegalights(ship) && shipHasValidConsumables(ship)){
