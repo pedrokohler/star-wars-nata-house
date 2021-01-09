@@ -10,7 +10,6 @@ const PAGE_SIZE = 10;
 
 function Ships({ children }) {
   const isFetching = useRef(false);
-  const [loadedPages, setLoadedPages] = useState([]);
   const [pageCount, setPageCount] = useState(1);
   const [ships, setShips] = useState([]);
 
@@ -22,22 +21,21 @@ function Ships({ children }) {
     newShipsArray[page - 1] = results;
     setShips(newShipsArray);
     setPageCount(Math.ceil(count / PAGE_SIZE));
-    setLoadedPages([...loadedPages, page]);
 
     isFetching.current = false;
     return results;
-  }, [loadedPages, ships]);
+  }, [ships]);
 
   const getShipsPage = useCallback(async (page) => {
     if (isFetching.current) {
       return [];
     }
-    if (loadedPages.includes(page)) {
+    if (ships[page - 1]) {
       return ships[page - 1];
     }
     const newShips = await fetchNewShipBatch(page);
     return newShips;
-  }, [fetchNewShipBatch, loadedPages, ships]);
+  }, [fetchNewShipBatch, ships]);
 
   return (
     <ShipsContext.Provider value={{
