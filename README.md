@@ -13,36 +13,14 @@ Clone the repository and install the dependencies
 git clone https://github.com/pedrokohler/star-wars-nata-house.git
 yarn install
 ```
-Go into the project's folder and create a build folder
-```
-cd star-wars-nata-house
-mkdir build
-```
-Create and configure the gh-pages branch
-```
-# Create an orphan branch named gh-pages
-git checkout --orphan gh-pages
-
-# Remove all files from staging
-git rm -rf .
-
-# Create an empty commit so that you will be able to push on the branch next
-git commit --allow-empty -m "Init empty branch"
-
-# Push the branch
-git push origin gh-pages
-
-# Come back to master
-git checkout master
-
-git worktree add build gh-pages
-```
-
-If your source control changes are full of wrong updates, just restart your IDE and it'll work fine.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn deploy`
+
+Deploys and updated version of the app to github pages.
 
 ### `yarn start`
 
