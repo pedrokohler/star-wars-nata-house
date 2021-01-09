@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/star-wars-nata-house/static/css/main.20871e84.chunk.css",
+    "main.js": "/star-wars-nata-house/static/js/main.4347b250.chunk.js",
+    "main.js.map": "/star-wars-nata-house/static/js/main.4347b250.chunk.js.map",
+    "runtime-main.js": "/star-wars-nata-house/static/js/runtime-main.b3599eb7.js",
+    "runtime-main.js.map": "/star-wars-nata-house/static/js/runtime-main.b3599eb7.js.map",
+    "static/js/2.9f2af35c.chunk.js": "/star-wars-nata-house/static/js/2.9f2af35c.chunk.js",
+    "static/js/2.9f2af35c.chunk.js.map": "/star-wars-nata-house/static/js/2.9f2af35c.chunk.js.map",
+    "index.html": "/star-wars-nata-house/index.html",
+    "static/css/main.20871e84.chunk.css.map": "/star-wars-nata-house/static/css/main.20871e84.chunk.css.map",
+    "static/js/2.9f2af35c.chunk.js.LICENSE.txt": "/star-wars-nata-house/static/js/2.9f2af35c.chunk.js.LICENSE.txt",
+    "static/media/ship.cdfcada7.jpg": "/star-wars-nata-house/static/media/ship.cdfcada7.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b3599eb7.js",
+    "static/js/2.9f2af35c.chunk.js",
+    "static/css/main.20871e84.chunk.css",
+    "static/js/main.4347b250.chunk.js"
+  ]
+}
