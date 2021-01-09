@@ -1,4 +1,4 @@
-# Song Ballot
+# Star Wars - Spacetrip Stops Calculator
 
 See the [demo version](https://pedrokohler.github.io/star-wars-nata-house)
 
