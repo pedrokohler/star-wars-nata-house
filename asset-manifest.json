@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/star-wars-nata-house/static/css/main.20871e84.chunk.css",
-    "main.js": "/star-wars-nata-house/static/js/main.90a75aca.chunk.js",
-    "main.js.map": "/star-wars-nata-house/static/js/main.90a75aca.chunk.js.map",
+    "main.js": "/star-wars-nata-house/static/js/main.cc89574d.chunk.js",
+    "main.js.map": "/star-wars-nata-house/static/js/main.cc89574d.chunk.js.map",
     "runtime-main.js": "/star-wars-nata-house/static/js/runtime-main.b3599eb7.js",
     "runtime-main.js.map": "/star-wars-nata-house/static/js/runtime-main.b3599eb7.js.map",
     "static/js/2.09c2831b.chunk.js": "/star-wars-nata-house/static/js/2.09c2831b.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.b3599eb7.js",
     "static/js/2.09c2831b.chunk.js",
     "static/css/main.20871e84.chunk.css",
-    "static/js/main.90a75aca.chunk.js"
+    "static/js/main.cc89574d.chunk.js"
   ]
 }
