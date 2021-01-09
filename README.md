@@ -1,6 +1,44 @@
-# Getting Started with Create React App
+# Song Ballot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+See the [demo version](https://pedrokohler.github.io/star-wars-nata-house)
+
+Do you have a business meeting in Tatooine and have no ideia how many stops you're gonna have to make until you get there? Perhaps a small vacation in Naboo? No problem, just access the link above and type in the number of Megalights of your trip and search for you ship model below to find out!
+
+Project created based on [these specifications](https://www.notion.so/Technical-test-nata-house-b41bd08b949d4cf194a18322b28bf09b)
+
+## Installation
+
+Clone the repository and install the dependencies
+```
+git clone https://github.com/pedrokohler/star-wars-nata-house.git
+yarn install
+```
+Go into the project's folder and create a build folder
+```
+cd star-wars-nata-house
+mkdir build
+```
+Create and configure the gh-pages branch
+```
+# Create an orphan branch named gh-pages
+git checkout --orphan gh-pages
+
+# Remove all files from staging
+git rm -rf .
+
+# Create an empty commit so that you will be able to push on the branch next
+git commit --allow-empty -m "Init empty branch"
+
+# Push the branch
+git push origin gh-pages
+
+# Come back to master
+git checkout master
+
+git worktree add build gh-pages
+```
+
+If your source control changes are full of wrong updates, just restart your IDE and it'll work fine.
 
 ## Available Scripts
 
