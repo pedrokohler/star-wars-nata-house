@@ -11,14 +11,17 @@ const Separator = styled.hr`
   margin-right: 0;
 `;
 
-const ShipEntry = (distance) => (ship) => (
-  <div key={ship.model}>
-    <Separator />
-    <ListEntry
-      firstColumn={ship.name}
-      secondColumn={computeMinimumStops(distance, ship) || "Unknown"}
-    />
-  </div>
-);
+const ShipEntry = (distance) => (ship) => {
+  const minimumStops = computeMinimumStops(distance, ship);
+  return (
+    <div key={ship.model}>
+      <Separator />
+      <ListEntry
+        firstColumn={ship.name}
+        secondColumn={minimumStops === null ? "Unknown" : minimumStops}
+      />
+    </div>
+  );
+};
 
 export default ShipEntry;
